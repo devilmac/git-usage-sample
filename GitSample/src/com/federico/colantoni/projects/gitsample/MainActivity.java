@@ -1,15 +1,14 @@
 package com.federico.colantoni.projects.gitsample;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -40,7 +39,16 @@ public class MainActivity extends ActionBarActivity {
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
 			return true;
+		} else if (id == R.id.action_button1) {
+			
+			Toast.makeText(this, "You pressed \"Button 1\"", Toast.LENGTH_SHORT).show();
+			return true;
+		} else if (id == R.id.action_button2) {
+			
+			Toast.makeText(this, "You pressed \"Button 2\"", Toast.LENGTH_SHORT).show();
+			return true;
 		}
+
 		return super.onOptionsItemSelected(item);
 	}
 

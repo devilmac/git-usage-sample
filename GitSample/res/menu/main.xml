@@ -4,6 +4,16 @@
     tools:context="com.federico.colantoni.projects.gitsample.MainActivity" >
 
     <item
+        android:id="@+id/action_button1"
+        android:orderInCategory="1"
+        android:title="@string/action_button_1"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_button2"
+        android:orderInCategory="2"
+        android:title="@string/action_button_2"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
