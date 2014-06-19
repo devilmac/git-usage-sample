@@ -15,12 +15,18 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.federico.colantoni.projects.gitsample.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:launchMode="singleTop" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.federico.colantoni.projects.gitsample.SecondActivity"
+            android:label="@string/title_activity_second"
+            android:launchMode="singleTop" >
         </activity>
     </application>
 
