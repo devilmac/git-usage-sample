@@ -1,5 +1,6 @@
 package com.federico.colantoni.projects.gitsample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -42,6 +43,8 @@ public class MainActivity extends ActionBarActivity {
 		} else if (id == R.id.action_button1) {
 			
 			Toast.makeText(this, "You pressed \"Button 1\"", Toast.LENGTH_SHORT).show();
+			
+			startActivity(new Intent(this, SecondActivity.class));
 			return true;
 		} else if (id == R.id.action_button2) {
 			
