@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -62,12 +63,33 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 			builder.setMessage("You pressed \"Button 2\"");
 			builder.setTitle("Warning!");
 			builder.setPositiveButton("OK", this);
-			builder.setPositiveButton("Cancel", this);
+			builder.setNegativeButton("Cancel", this);
 
 			builder.create().show();
 		}
 
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public void onBackPressed() {
+
+		finish();
+
+		System.exit(0);
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+
+			finish();
+
+			System.exit(0);
+		}
+
+		return super.onKeyDown(keyCode, event);
 	}
 
 	/**
