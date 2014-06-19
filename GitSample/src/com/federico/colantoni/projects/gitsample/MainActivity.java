@@ -1,5 +1,7 @@
 package com.federico.colantoni.projects.gitsample;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -49,6 +51,17 @@ public class MainActivity extends ActionBarActivity {
 		} else if (id == R.id.action_button2) {
 			
 			Toast.makeText(this, "You pressed \"Button 2\"", Toast.LENGTH_SHORT).show();
+			
+			AlertDialog.Builder builder=new Builder(this);
+			
+			builder.setCancelable(true);
+			builder.setMessage("You pressed \"Button 2\"");
+			builder.setTitle("Warning!");
+			builder.setPositiveButton("OK", null);
+			builder.setPositiveButton("Cancel", null);
+			
+			builder.create().show();
+			
 			return true;
 		}
 
