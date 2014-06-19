@@ -2,6 +2,8 @@ package com.federico.colantoni.projects.gitsample;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,26 +45,26 @@ public class MainActivity extends ActionBarActivity {
 		if (id == R.id.action_settings) {
 			return true;
 		} else if (id == R.id.action_button1) {
-			
-			Toast.makeText(this, "You pressed \"Button 1\"", Toast.LENGTH_SHORT).show();
-			
+
+			Toast.makeText(this, "You pressed \"Button 1\"", Toast.LENGTH_SHORT)
+					.show();
+
 			startActivity(new Intent(this, SecondActivity.class));
 			return true;
 		} else if (id == R.id.action_button2) {
-			
-			Toast.makeText(this, "You pressed \"Button 2\"", Toast.LENGTH_SHORT).show();
-			
-			AlertDialog.Builder builder=new Builder(this);
-			
-			builder.setCancelable(true);
+
+			Toast.makeText(this, "You pressed \"Button 2\"", Toast.LENGTH_SHORT)
+					.show();
+
+			AlertDialog.Builder builder = new Builder(this);
+
+			builder.setCancelable(false);
 			builder.setMessage("You pressed \"Button 2\"");
 			builder.setTitle("Warning!");
-			builder.setPositiveButton("OK", null);
-			builder.setPositiveButton("Cancel", null);
-			
+			builder.setPositiveButton("OK", this);
+			builder.setPositiveButton("Cancel", this);
+
 			builder.create().show();
-			
-			return true;
 		}
 
 		return super.onOptionsItemSelected(item);
@@ -83,6 +85,12 @@ public class MainActivity extends ActionBarActivity {
 					false);
 			return rootView;
 		}
+	}
+
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+
+		dialog.dismiss();
 	}
 
 }
