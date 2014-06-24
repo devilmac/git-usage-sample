@@ -1,4 +1,4 @@
 git-usage-sample
 ================
 
-This repos allow me to understand how Git works.
+This repos allows me to understand how Git works.
